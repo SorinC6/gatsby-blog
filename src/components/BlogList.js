@@ -28,11 +28,13 @@ const BlogList = () => {
 
   return (
     <>
-      <p>Test</p>
+      <p>Archive Blogs</p>
       {edges.map(({ node }) => {
         return (
           <div key={node.frontmatter.slug}>
-            <Link to={node.frontmatter.slug}>{node.frontmatter.title}</Link>
+            <Link to={`/post${node.frontmatter.slug}`}>
+              {node.frontmatter.title}
+            </Link>
             <p>{node.excerpt}</p>
           </div>
         )
