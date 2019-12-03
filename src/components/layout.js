@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 import BlogList from "./RightList"
 import Header from "./header"
 import "./layout.css"
@@ -22,12 +23,22 @@ const Layout = ({ children }) => {
           title
         }
       }
+      file(relativePath: { regex: "/bg/" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
     }
   `)
+
+  const fluid = data.file.childImageSharp.fluid
 
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
+      <Img fluid={fluid} />
       <MainLayout>
         <main>{children}</main>
         <BlogList />

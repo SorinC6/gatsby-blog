@@ -27,7 +27,7 @@ const BlogList = () => {
   `)
 
   const { edges } = data.allMarkdownRemark
-  console.log(edges)
+
   return (
     <div>
       <SEO title="List" />
