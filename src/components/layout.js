@@ -2,15 +2,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
-import BlogList from "./BlogList"
+import BlogList from "./RightList"
 import Header from "./header"
 import "./layout.css"
 
 const MainLayout = styled.main`
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 40px;
 `
 
 const Layout = ({ children }) => {

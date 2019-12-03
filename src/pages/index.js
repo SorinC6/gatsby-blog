@@ -1,14 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
-import Listing from "../components/Listing"
+import BlogList from "../components/BlogList"
 
 const IndexPage = () => (
   <Layout>
-    <Listing />
+    <BlogList />
   </Layout>
 )
 
 export default IndexPage
-
-
-
