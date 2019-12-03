@@ -5,7 +5,6 @@ import styled from "styled-components"
 
 const HeaderWrapper = styled.header`
   background: darkred;
-  margin-bottom: 1.45rem;
 `
 
 const HeaderContainer = styled.div`

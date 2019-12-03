@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "./layout"
 import { graphql } from "gatsby"
+import SEO from "./seo"
 
 const PostDetails = ({ data, location }) => {
   const { title } = data.markdownRemark.frontmatter
@@ -8,6 +9,7 @@ const PostDetails = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO title={title} />
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>

@@ -30,7 +30,7 @@ const BlogList = () => {
 
   return (
     <div>
-      <SEO title="List" />
+      <SEO title="Home" />
       {edges.map(({ node }) => {
         return (
           <Post key={node.frontmatter.slug}>
