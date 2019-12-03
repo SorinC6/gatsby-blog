@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import BlogList from "./RightList"
 import Header from "./header"
+import { Spring } from "react-spring/renderprops"
 import "./layout.css"
 
 const MainLayout = styled.main`
@@ -15,7 +16,7 @@ const MainLayout = styled.main`
   grid-gap: 40px;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -38,7 +39,17 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Img fluid={fluid} />
+      <Spring
+        from={{ height: location.pathname === "/" ? 100 : 200 }}
+        to={{ height: location.pathname === "/" ? 200 : 100 }}
+      >
+        {styles => (
+          <div style={{ overflow: "hidden", ...styles }}>
+            <Img fluid={fluid} />
+          </div>
+        )}
+      </Spring>
+      {/* {location.pathname === "/" && <Img fluid={fluid} />} */}
       <MainLayout>
         <main>{children}</main>
         <BlogList />
