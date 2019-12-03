@@ -1,11 +1,14 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
-const BlogList = () => {
+import Image from "../components/image"
+import SEO from "../components/seo"
+
+const Listing = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query Test {
       allMarkdownRemark(
-        limit: 5
+        limit: 10
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         totalCount
@@ -24,22 +27,24 @@ const BlogList = () => {
   `)
 
   const { edges } = data.allMarkdownRemark
-  //console.log(edges)
-
+  console.log(edges)
   return (
     <div>
-      <p>Archive Blogs</p>
+      <SEO title="List" />
       {edges.map(({ node }) => {
         return (
-          <li key={node.frontmatter.slug}>
+          <article key={node.frontmatter.slug}>
             <Link to={`/post${node.frontmatter.slug}`}>
-              {node.frontmatter.title}
+              <h2>{node.frontmatter.title}</h2>
             </Link>
-          </li>
+            <p>{node.frontmatter.date}</p>
+            <p>{node.excerpt}</p>
+            <Link to={`/post${node.frontmatter.slug}`}>Read More</Link>
+          </article>
         )
       })}
     </div>
   )
 }
 
-export default BlogList
+export default Listing
