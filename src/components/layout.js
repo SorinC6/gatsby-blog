@@ -11,9 +11,12 @@ import "./layout.css"
 const MainLayout = styled.main`
   max-width: 1000px;
   margin: 1rem auto;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-gap: 40px;
+`
+
+const MainImage = styled(Img)`
+  margin-top: -60px;
+  padding: 20px 0;
+  z-index: -1;
 `
 
 const Layout = ({ children, location }) => {
@@ -40,11 +43,10 @@ const Layout = ({ children, location }) => {
     <>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
-
-      {location.pathname === "/" && <Img fluid={fluid} />}
+      {location.pathname === "/" && <MainImage fluid={fluid} />}
       <MainLayout>
         <main>{children}</main>
-        <RightList />
+        {/* <RightList /> */}
         {/* <footer>© {new Date().getFullYear()}, Built with</footer> */}
       </MainLayout>
     </>

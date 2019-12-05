@@ -1,11 +1,11 @@
 import React from "react"
 import Layout from "../components/layout"
-import BlogList from "../components/BlogList"
+import Home from "../components/Home"
 
 const IndexPage = ({ location }) => {
   return (
     <Layout location={location}>
-      <BlogList />
+      <Home />
     </Layout>
   )
 }
