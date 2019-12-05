@@ -44,13 +44,13 @@ const Layout = ({ children, location }) => {
     <>
       <GlobalStyle />
       <Parallax pages={2} scrolling>
-        <ParallaxLayer offset={0} speed={0}>
+        <ParallaxLayer offset={-0.0} speed={0}>
           <Header siteTitle={data.site.siteMetadata.title} />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={0.4} style={{ zIndex: -2 }}>
           {location.pathname === "/" && <MainImage fluid={fluid} />}
         </ParallaxLayer>
-        <ParallaxLayer offset={0.9999} speed={1.5} style={{ zIndex: -2 }}>
+        <ParallaxLayer offset={0.9999} speed={0.7} style={{ zIndex: -2 }}>
           <MainLayout>
             <main>{children}</main>
             {/* <RightList /> */}

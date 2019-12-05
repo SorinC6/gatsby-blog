@@ -43,6 +43,8 @@ const CardWrapper = styled.div`
   user-select: none;
   cursor: default;
 
+  margin:20px 0;
+
   .card {
     width: 300px;
     height: 300px;

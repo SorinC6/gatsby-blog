@@ -11,4 +11,5 @@ export default function Description() {
 
 const Root = styled.div`
   padding:50px;
+  margin-bottom:100px;
 `

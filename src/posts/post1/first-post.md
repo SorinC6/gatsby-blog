@@ -1,10 +1,13 @@
 ---
-slug: "/second-post"
-date: "2019-12-12"
-title: "Second Post"
+slug: "/first-post"
+date: "2019-11-12"
+title: "Our First Post"
+mainImage:
+  image: /img/post1
+  imageAlt: image for first post
 ---
 
-# Flavor
+# HELLO
 
 Mustache Vice banjo, cred next level butcher ugh salvia High Life. Semiotics swag four dollar toast irony single-origin coffee craft beer ethical, dreamcatcher tote bag High Life Wes Anderson beard. Neutra photo booth squid, Shoreditch lo-fi hoodie VHS art party church-key Brooklyn. Vinyl drinking vinegar Carles, leggings skateboard aesthetic cronut synth tofu heirloom tattooed. Marfa Bushwick keffiyeh, High Life deep v Carles hella Pinterest biodiesel cray vegan. Vegan wolf Tumblr shabby chic umami, yr cold-pressed tousled iPhone post-ironic. Thundercats salvia lumbersexual plaid, ethical pickled pop-up next level vegan pug XOXO Schlitz wayfarers.
 

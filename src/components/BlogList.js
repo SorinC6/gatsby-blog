@@ -7,7 +7,7 @@ import SEO from "./seo"
 
 const BlogList = () => {
   const data = useStaticQuery(graphql`
-    query Test {
+    query BlogPostQuery {
       allMarkdownRemark(
         limit: 10
         sort: { fields: frontmatter___date, order: DESC }

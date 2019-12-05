@@ -2,6 +2,9 @@
 slug: "/third-post"
 date: "2020-10-12"
 title: "Third Post"
+mainImage:
+  image: /img/post3
+  imageAlt: image for first post
 ---
 
 # HO ho ho
