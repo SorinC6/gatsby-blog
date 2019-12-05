@@ -3,32 +3,23 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-const HeaderWrapper = styled.header`
-  background: darkred;
-`
-
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.nav`
   margin: 0 auto;
-  max-width: 960;
-  padding: 0.5rem;
+  max-width: 100%;
+  padding: 1rem;
+  background: transparent;
+
+  h1 {
+    font-size: 20px;
+  }
 `
 
 const Header = ({ siteTitle }) => (
-  <HeaderWrapper>
-    <HeaderContainer>
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </HeaderContainer>
-  </HeaderWrapper>
+  <HeaderContainer>
+    <h1>
+      <Link to="/">{siteTitle}</Link>
+    </h1>
+  </HeaderContainer>
 )
 
 Header.propTypes = {

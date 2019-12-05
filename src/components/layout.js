@@ -5,11 +5,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import RightList from "./RightList"
 import Header from "./header"
-import { Spring } from "react-spring/renderprops"
+import { GlobalStyle } from "./styles/global"
 import "./layout.css"
 
 const MainLayout = styled.main`
-  max-width: 80%;
+  max-width: 1000px;
   margin: 1rem auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -24,7 +24,7 @@ const Layout = ({ children, location }) => {
           title
         }
       }
-      file(relativePath: { regex: "/bg/" }) {
+      file(relativePath: { regex: "/homeBg/" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -34,22 +34,14 @@ const Layout = ({ children, location }) => {
     }
   `)
 
-  // const fluid = data.file.childImageSharp.fluid
+  const fluid = data.file.childImageSharp.fluid
 
   return (
     <>
+      <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Spring
-        from={{ height: location.pathname === "/" ? 100 : 200 }}
-        to={{ height: location.pathname === "/" ? 200 : 100 }}
-      >
-        {styles => (
-          <div style={{ overflow: "hidden", ...styles }}>
-            <Img fluid={data.file.childImageSharp.fluid} />
-          </div>
-        )}
-      </Spring>
-      {/* {location.pathname === "/" && <Img fluid={fluid} />} */}
+
+      {location.pathname === "/" && <Img fluid={fluid} />}
       <MainLayout>
         <main>{children}</main>
         <RightList />
