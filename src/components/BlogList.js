@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import BlogCard from "./~common/BlogCard"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import SEO from "./seo"
@@ -29,7 +30,7 @@ const BlogList = () => {
   const { edges } = data.allMarkdownRemark
 
   return (
-    <div>
+    <Root>
       <SEO title="Home" />
       {edges.map(({ node }) => {
         return (
@@ -45,17 +46,17 @@ const BlogList = () => {
           </Post>
         )
       })}
-    </div>
+    </Root>
   )
 }
 
 export default BlogList
 
-const Post = styled.article`
+const Post = styled(BlogCard)`
   box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.05);
   padding: 1rem;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem !important;
 
   a {
     color: #000;
@@ -77,4 +78,10 @@ const Post = styled.article`
     text-decoration: underline;
     color: purple;
   }
+`
+
+const Root = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 `

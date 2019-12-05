@@ -1,6 +1,3 @@
-import useSiteData from "./useSiteMetadata";
+// import useSiteData from "./useSiteData"
 
-
-export {
-  useSiteMetadata,
-};
+// export { useSiteData }

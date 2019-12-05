@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import BlogList from './BlogList'
 import Stack from './~common/Stack'
+import Description from './~common/Description'
 import CardWrapper from './~common/BlogCard'
 
 const Home = () => {
@@ -10,12 +11,8 @@ const Home = () => {
     <Root>
       <Title>Hello Amigo Test Title</Title>
       <Stack />
+      <Description />
       <BlogList />
-      <CardWrapper >
-        Hshhseererer
-        sdsds
-        sdsd
-      </CardWrapper>
 
     </Root>
   )

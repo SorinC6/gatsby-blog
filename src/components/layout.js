@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import RightList from "./RightList"
 import Header from "./header"
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import { GlobalStyle } from "./styles/global"
 import "./layout.css"
 
@@ -30,7 +31,7 @@ const Layout = ({ children, location }) => {
       file(relativePath: { regex: "/homeBg/" }) {
         childImageSharp {
           fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -42,13 +43,21 @@ const Layout = ({ children, location }) => {
   return (
     <>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      {location.pathname === "/" && <MainImage fluid={fluid} />}
-      <MainLayout>
-        <main>{children}</main>
-        {/* <RightList /> */}
-        {/* <footer>© {new Date().getFullYear()}, Built with</footer> */}
-      </MainLayout>
+      <Parallax pages={2} scrolling>
+        <ParallaxLayer offset={0} speed={0}>
+          <Header siteTitle={data.site.siteMetadata.title} />
+        </ParallaxLayer>
+        <ParallaxLayer offset={0} speed={0.4} style={{ zIndex: -2 }}>
+          {location.pathname === "/" && <MainImage fluid={fluid} />}
+        </ParallaxLayer>
+        <ParallaxLayer offset={0.9999} speed={1.5} style={{ zIndex: -2 }}>
+          <MainLayout>
+            <main>{children}</main>
+            {/* <RightList /> */}
+            {/* <footer>© {new Date().getFullYear()}, Built with</footer> */}
+          </MainLayout>
+        </ParallaxLayer>
+      </Parallax>
     </>
   )
 }

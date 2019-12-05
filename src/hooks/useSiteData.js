@@ -1,19 +1,23 @@
 import { graphql, useStaticQuery } from "gatsby"
 
 function useSiteMetadata() {
-  const { site } = useStaticQuery(
-    graphql`
-      query SITE_METADATA_QUERY {
-        site {
-          siteMetadata {
-            title
-            description
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery44 {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+      file(relativePath: { regex: "/homeBg/" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
-    `
-  )
-  return site.siteMetadata
+    }
+  `)
+  return data
 }
 
 export default useSiteMetadata
