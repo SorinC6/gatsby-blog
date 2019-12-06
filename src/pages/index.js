@@ -1,13 +1,12 @@
-import React from "react"
-import Layout from "../components/layout"
-import Home from "../components/Home"
+import React from "react";
+import IndexTemplate from "../templates/index-page";
 
-const IndexPage = ({ location }) => {
+const Index = () => {
   return (
-    <Layout location={location}>
-      <Home />
-    </Layout>
-  )
-}
+    <>
+      <IndexTemplate />
+    </>
+  );
+};
 
-export default IndexPage
+export default Index;

@@ -1,36 +1,51 @@
-const path = require("path")
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
+const { fmImagesToRelative } = require("gatsby-remark-relative-images");
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-  return new Promise((resolve, reject) => {
-    graphql(`
-      {
-        allMarkdownRemark {
-          edges {
-            node {
-              frontmatter {
-                slug
-              }
+  //Get the path to template
+  const blogTemplate = path.resolve("./src/templates/blog-post.js");
+
+  //Get markdown data
+  const res = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
             }
           }
         }
       }
-    `)
-      .then(results => {
-        results.data.allMarkdownRemark.edges.forEach(({ node }) => {
-          createPage({
-            path: `post${node.frontmatter.slug}`,
-            component: path.resolve("./src/components/PostDetails.js"),
-            context: {
-              slug: node.frontmatter.slug,
-              test: 5,
-            },
-          })
-        })
+    }
+  `);
+  //Create new Pages
+  res.data.allMarkdownRemark.edges.forEach(edge => {
+    //console.log(JSON.stringify(edge, undefined, 4));
+    createPage({
+      component: blogTemplate,
+      path: edge.node.fields.slug,
+      context: {
+        slug: edge.node.fields.slug
+      }
+    });
+  });
+};
 
-        resolve()
-      })
-      .catch()
-  })
-}
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+  fmImagesToRelative(node); // convert image paths for gatsby images
+
+  if (node.internal.type === `MarkdownRemark`) {
+    //console.log(JSON.stringify(node, undefined, 4));
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: `slug`,
+      node,
+      value
+    });
+  }
+};

@@ -1,87 +1,77 @@
-import React from "react"
-import styled from "styled-components"
-import BlogCard from "./~common/BlogCard"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import React, { useState, useRef, useEffect } from "react";
+import PropTypes from "prop-types";
+import BlogPreview from "./BlogPreview";
+import styled from "styled-components";
+import Button from "../components/Button";
+import { Link } from "gatsby";
+//import { useSlug } from "../lib/hooks";
 
-import SEO from "./seo"
-
-const BlogList = () => {
-  const data = useStaticQuery(graphql`
-    query BlogPostQuery {
-      allMarkdownRemark(
-        limit: 10
-        sort: { fields: frontmatter___date, order: DESC }
-      ) {
-        totalCount
-        edges {
-          node {
-            frontmatter {
-              title
-              date(formatString: "MMMM DD, YYYY")
-              slug
-            }
-            excerpt
-          }
-        }
-      }
-    }
-  `)
-
-  const { edges } = data.allMarkdownRemark
+const BlogList = ({ blogData }) => {
+  const [nrOfBlogsDesktop, setNumberOfBlogsDesktop] = useState(4);
+  const [nrOfBlogsMobile, setNumberOfBlogsMobile] = useState(2);
+  const [screenWidth, setScreenWidth] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    let width = ref.current ? ref.current.offsetWidth : 0;
+    setScreenWidth(width);
+  }, []);
+  const handleClick = () => {
+    screenWidth > 400 && setNumberOfBlogsDesktop(nrOfBlogsDesktop + 4);
+    screenWidth <= 400 && setNumberOfBlogsMobile(nrOfBlogsMobile + 2);
+  };
 
   return (
-    <Root>
-      <SEO title="Home" />
-      {edges.map(({ node }) => {
-        return (
-          <Post key={node.frontmatter.slug}>
-            <Link to={`/post${node.frontmatter.slug}`}>
-              <h2>{node.frontmatter.title}</h2>
-            </Link>
-            <p>{node.frontmatter.date}</p>
-            <p>{node.excerpt}</p>
-            <Link to={`/post${node.frontmatter.slug}`} className="read-more">
-              Read More
-            </Link>
-          </Post>
-        )
-      })}
-    </Root>
-  )
-}
+    <>
+      <Root ref={ref}>
+        {blogData &&
+          blogData.map((item, index) => {
+            const { title, excerpt, image } = item.node.frontmatter;
+            const { slug } = item.node.fields;
+            if (index < nrOfBlogsDesktop && screenWidth > 400) {
+              return (
+                <Link to={slug} key={slug}>
+                  <BlogPreview title={title} excerpt={excerpt} image={image} />
+                </Link>
+              );
+            }
+            if (index < nrOfBlogsMobile && screenWidth <= 400) {
+              return (
+                <Link to={slug} key={slug}>
+                  <BlogPreview title={title} excerpt={excerpt} image={image} />
+                </Link>
+              );
+            }
+            return null;
+          })}
+      </Root>
+      <Button handleClick={handleClick} />
+    </>
+  );
+};
 
-export default BlogList
+export default BlogList;
 
-const Post = styled(BlogCard)`
-  box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.05);
-  padding: 1rem;
-  border-radius: 4px;
-  margin-bottom: 2rem !important;
-
-  a {
-    color: #000;
-    text-decoration: none;
-  }
-
-  p {
-    font-size: 0.8rem;
-  }
-
-  h2 {
-    margin-bottom: 0;
-  }
-
-  .read-more {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-size: 0.8rem;
-    text-decoration: underline;
-    color: purple;
-  }
-`
+BlogList.propTypes = {
+  blogData: PropTypes.arrayOf(PropTypes.object.isRequired)
+};
 
 const Root = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-`
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 200px;
+  padding: 0 calc((100vw - 80vw) / 2);
+
+  a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 400px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+`;

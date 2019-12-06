@@ -1,46 +1,98 @@
 module.exports = {
   siteMetadata: {
-    title: `Woop Blog`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: "https://festive-banach-f1d148.netlify.com",
+    title: "Sorin Blog",
+    description: "simple business website using Gatsby and NetlifyCMS"
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-source-filesystem`,
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
+        path: `${__dirname}/static/uploads`,
+        name: "uploads"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/content`,
+        name: "pages"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/src/assets/img`,
+        name: "images"
+      }
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        path: `${__dirname}/src/content/blog`
+      }
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts`,
-      },
+        name: `backgrounds`,
+        path: `${__dirname}/src/assets/sliderImg` // wherever background images are stored
+      }
+    },
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-antd",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-relative-images",
+            options: {
+              name: "uploads"
+            }
+          },
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048
+            }
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files",
+            options: {
+              destinationDir: "static"
+            }
+          }
+        ]
+      }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        name: `Woop Blog`,
-        short_name: `Woop`,
-        start_url: `/`,
-        background_color: `#524763`,
-        theme_color: `#524763`,
-        display: `minimal-ui`,
-      },
+        extensions: [`.mdx`, `.md`]
+      }
     },
-    `gatsby-plugin-sitemap`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-styled-components`,
-    `gatsby-transformer-remark`,
-    `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-netlify`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
-  ],
-}
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
+    },
+    "gatsby-plugin-netlify" // make sure to keep it last in the array
+  ]
+};
