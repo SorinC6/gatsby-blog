@@ -9,6 +9,18 @@
             "plugins": [],
             "ssr": false
           }
+        },
+        {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
+          }
+        },
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
         }
       ],
       "presets": [],
@@ -19,6 +31,18 @@
     },
     "develop-html": {
       "plugins": [
+        {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
+          }
+        },
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
+        },
         {
           "name": "babel-plugin-styled-components",
           "stage": "develop-html",
@@ -37,6 +61,18 @@
     "build-html": {
       "plugins": [
         {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
+          }
+        },
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
+        },
+        {
           "name": "babel-plugin-styled-components",
           "stage": "build-html",
           "options": {
@@ -53,6 +89,18 @@
     },
     "build-javascript": {
       "plugins": [
+        {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
+          }
+        },
+        {
+          "name": "@babel/plugin-proposal-object-rest-spread",
+          "options": {}
+        },
         {
           "name": "babel-plugin-styled-components",
           "stage": "build-javascript",

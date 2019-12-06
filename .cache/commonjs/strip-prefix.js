@@ -8,16 +8,7 @@ exports.default = void 0;
  * isn't found.
  */
 var _default = (str, prefix = ``) => {
-  if (!prefix) {
-    return str;
-  }
-
-  prefix += `/`;
-
-  if (str.substr(0, prefix.length) === prefix) {
-    return str.slice(prefix.length - 1);
-  }
-
+  if (str.substr(0, prefix.length) === prefix) return str.slice(prefix.length);
   return str;
 };
 

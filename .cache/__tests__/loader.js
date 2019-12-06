@@ -36,6 +36,7 @@ describe(`Production loader`, () => {
 
     const defaultPayload = {
       path: `/mypage/`,
+      webpackCompilationHash: `1234`,
     }
 
     // replace the real XHR object with the mock XHR object before each test
@@ -216,6 +217,7 @@ describe(`Production loader`, () => {
       const prodLoader = new ProdLoader(null, [])
       const payload = {
         path: `/blocked-page/`,
+        webpackCompilationHash: `1234`,
       }
 
       let xhrCount = 0
@@ -259,29 +261,7 @@ describe(`Production loader`, () => {
       }
     }
 
-    let originalPathPrefix
-
-    beforeEach(() => {
-      originalPathPrefix = global.__PATH_PREFIX__
-      global.__PATH_PREFIX__ = ``
-      mock.setup()
-      mock.get(`/page-data/app-data.json`, (req, res) =>
-        res
-          .status(200)
-          .header(`content-type`, `application/json`)
-          .body(
-            JSON.stringify({
-              webpackCompilationHash: `123`,
-            })
-          )
-      )
-      emitter.emit.mockReset()
-    })
-
-    afterEach(() => {
-      global.__PATH_PREFIX__ = originalPathPrefix
-      mock.teardown()
-    })
+    beforeEach(() => emitter.emit.mockReset())
 
     it(`should be successful when component can be loaded`, async () => {
       const asyncRequires = createAsyncRequires({
@@ -291,6 +271,7 @@ describe(`Production loader`, () => {
       const pageData = {
         path: `/mypage/`,
         componentChunkName: `chunk`,
+        webpackCompilationHash: `123`,
         result: {
           pageContext: `something something`,
         },
@@ -326,6 +307,7 @@ describe(`Production loader`, () => {
       const pageData = {
         path: `/mypage/`,
         componentChunkName: `chunk`,
+        webpackCompilationHash: `123`,
       }
       prodLoader.loadPageDataJson = jest.fn(() =>
         Promise.resolve({
@@ -353,6 +335,7 @@ describe(`Production loader`, () => {
       const pageData = {
         path: `/mypage/`,
         componentChunkName: `chunk`,
+        webpackCompilationHash: `123`,
       }
       prodLoader.loadPageDataJson = jest.fn(() =>
         Promise.resolve({
@@ -375,6 +358,7 @@ describe(`Production loader`, () => {
       const pageData = {
         path: `/mypage/`,
         componentChunkName: `chunk`,
+        webpackCompilationHash: `123`,
       }
       prodLoader.loadPageDataJson = jest.fn(() =>
         Promise.resolve({

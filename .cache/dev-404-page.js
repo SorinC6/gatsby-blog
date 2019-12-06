@@ -104,7 +104,7 @@ class Dev404Page extends React.Component {
                   type="text"
                   id="search"
                   placeholder="Search pages..."
-                  value={this.state.pagePathSearchTerms}
+                  value={this.state.pageSearchTerm}
                   onChange={this.handleSearchTermChange}
                 />
               </label>

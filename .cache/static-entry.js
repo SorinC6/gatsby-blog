@@ -365,8 +365,10 @@ export default (pagePath, callback) => {
       }
     })
 
+  const webpackCompilationHash = pageData.webpackCompilationHash
+
   // Add page metadata for the current page
-  const windowPageData = `/*<![CDATA[*/window.pagePath="${pagePath}";/*]]>*/`
+  const windowPageData = `/*<![CDATA[*/window.pagePath="${pagePath}";window.webpackCompilationHash="${webpackCompilationHash}";/*]]>*/`
 
   postBodyComponents.push(
     <script

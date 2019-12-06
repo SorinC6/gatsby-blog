@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway
-  repo: master
+  name: github
+  branch: master
+  repo: SorinC6/gatsby-blog
 
 media_folder: static/uploads
 public_folder: /uploads

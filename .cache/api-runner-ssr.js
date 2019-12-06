@@ -2,20 +2,14 @@ var plugins = [{
       plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"name":"Woop Blog","short_name":"Woop","start_url":"/","background_color":"#524763","theme_color":"#524763","display":"minimal-ui"},
+      plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
     },{
       plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-remark-images/gatsby-ssr'),
       options: {"plugins":[],"maxWidth":2048},
     },{
-      plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-plugin-sitemap/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
-      plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
-      options: {"plugins":[]},
-    },{
-      plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-plugin-offline/gatsby-ssr'),
-      options: {"plugins":[]},
+      plugin: require('/Users/user/Documents/gatsby/gatsby-blog/node_modules/gatsby-plugin-mdx/gatsby-ssr'),
+      options: {"plugins":[],"extensions":[".mdx",".md"]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [

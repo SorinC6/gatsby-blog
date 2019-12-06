@@ -351,9 +351,10 @@ var _default = (pagePath, callback) => {
         }
       }));
     }
-  }); // Add page metadata for the current page
+  });
+  const webpackCompilationHash = pageData.webpackCompilationHash; // Add page metadata for the current page
 
-  const windowPageData = `/*<![CDATA[*/window.pagePath="${pagePath}";/*]]>*/`;
+  const windowPageData = `/*<![CDATA[*/window.pagePath="${pagePath}";window.webpackCompilationHash="${webpackCompilationHash}";/*]]>*/`;
   postBodyComponents.push(React.createElement("script", {
     key: `script-loader`,
     id: `gatsby-script-loader`,
