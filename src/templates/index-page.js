@@ -19,9 +19,9 @@ export function IndexPageTemplate() {
   return (
     <>
       <Hero heroData={heroData} />
-      <Intro introData={introData} />
-      <LogoList logoData={logoData} />
+      {/* <LogoList logoData={logoData} /> */}
       <BlogList blogData={blogData} />
+      <Intro introData={introData} />
     </>
   );
 }

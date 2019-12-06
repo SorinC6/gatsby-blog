@@ -13,7 +13,7 @@ intro:
     servers and their expensive, time-consuming setup costs, maintenance, and
     scaling fears. Gatsby.js builds your site as “static” files which can be
     deployed easily on dozens of services.
-  heading: Scale to the entire internet
+  heading: My Choices
   image: /uploads/56217.jpg
 logos:
   - image: /uploads/logo.svg
