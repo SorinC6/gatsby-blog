@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Woop Blog",
-    description: "Persoal Blog for preseting myself"
+    description: "Persoal Blog for preseting myself",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -10,44 +10,44 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/uploads`,
-        name: "uploads"
-      }
+        name: "uploads",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/content`,
-        name: "pages"
-      }
+        name: "pages",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/assets/img`,
-        name: "images"
-      }
+        name: "images",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "blog",
-        path: `${__dirname}/src/content/blog`
-      }
+        path: `${__dirname}/src/content/blog`,
+      },
     },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /assets/
-        }
-      }
+          include: /assets/,
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `backgrounds`,
-        path: `${__dirname}/src/assets/sliderImg` // wherever background images are stored
-      }
+        path: `${__dirname}/src/assets/sliderImg`, // wherever background images are stored
+      },
     },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-antd",
@@ -60,8 +60,8 @@ module.exports = {
           {
             resolve: "gatsby-remark-relative-images",
             options: {
-              name: "uploads"
-            }
+              name: "uploads",
+            },
           },
           {
             resolve: "gatsby-remark-images",
@@ -69,30 +69,38 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 2048
-            }
+              maxWidth: 2048,
+            },
           },
           {
             resolve: "gatsby-remark-copy-linked-files",
             options: {
-              destinationDir: "static"
-            }
-          }
-        ]
-      }
+              destinationDir: "static",
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [`.mdx`, `.md`]
-      }
+        extensions: [`.mdx`, `.md`],
+      },
     },
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`
-      }
+        modulePath: `${__dirname}/src/cms/cms.js`,
+      },
     },
-    "gatsby-plugin-netlify" // make sure to keep it last in the array
-  ]
-};
+    "gatsby-plugin-netlify", // make sure to keep it last in the array
+  ],
+}

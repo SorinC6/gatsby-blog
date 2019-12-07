@@ -1,12 +1,13 @@
-import React from "react";
-import IndexTemplate from "../templates/index-page";
+import React from "react"
+import IndexTemplate from "../templates/index-page"
 
-const Index = () => {
+const Index = ({ location }) => {
+  console.log(location)
   return (
     <>
-      <IndexTemplate />
+      <IndexTemplate location={location} />
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
