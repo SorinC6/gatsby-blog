@@ -25,11 +25,17 @@ const BlogList = ({ blogData }) => {
       <Root ref={ref}>
         {blogData &&
           blogData.map((item, index) => {
-            const { title, excerpt, image } = item.node.frontmatter
+            const { title, excerpt, image, date } = item.node.frontmatter
             const { slug } = item.node.fields
             return (
               <Link to={slug} key={slug}>
-                <BlogPreview title={title} excerpt={excerpt} image={image} />
+                <BlogPreview
+                  title={title}
+                  excerpt={excerpt}
+                  image={image}
+                  date={date}
+                  index={index}
+                />
               </Link>
             )
           })}
@@ -48,20 +54,12 @@ BlogList.propTypes = {
 const Root = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   margin-top: 200px;
   padding: 0 calc((100vw - 80vw) / 2);
 
   a {
     text-decoration: none;
-  }
-
-  @media (max-width: 400px) {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-top: 50px;
-    padding: 0 20px;
   }
 `

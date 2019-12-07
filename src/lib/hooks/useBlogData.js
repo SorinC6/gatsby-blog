@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby"
 
 function useLogoData() {
   const data = useStaticQuery(
@@ -15,6 +15,7 @@ function useLogoData() {
             node {
               frontmatter {
                 title
+                date(formatString: "MMMM DD, YYYY")
                 image: featuredimage {
                   childImageSharp {
                     fluid {
@@ -32,9 +33,9 @@ function useLogoData() {
         }
       }
     `
-  );
-  //console.log("QUERY ", data);
-  return data.allMarkdownRemark.edges;
+  )
+  // console.log("QUERY ", data)
+  return data.allMarkdownRemark.edges
 }
 
-export default useLogoData;
+export default useLogoData
