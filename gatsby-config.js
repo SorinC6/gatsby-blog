@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "Sorin Blog",
-    description: "simple business website using Gatsby and NetlifyCMS"
+    title: "Woop Blog",
+    description: "Persoal Blog for preseting myself"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
