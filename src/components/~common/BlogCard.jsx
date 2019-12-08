@@ -18,7 +18,7 @@ function Card(p) {
   return (
     <CardWrapper>
       <animated.div
-        class="card"
+        className="card"
         onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
         onMouseLeave={() => set({ xys: [0, 0, 1] })}
         style={{ transform: props.xys.interpolate(trans) }}
@@ -34,7 +34,6 @@ export default Card
 const CardWrapper = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
     helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif;
-  background: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -43,9 +42,8 @@ const CardWrapper = styled.div`
   user-select: none;
   cursor: default;
   margin:20px 0;
-  transition: box-shadow 1s;
+  transition: all 1s;
   &:hover{
-    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.2);
       cursor:pointer;
   }
 
@@ -53,7 +51,9 @@ const CardWrapper = styled.div`
 
     background: grey;
     border-radius: 5px;
-    background:transparent;
+    background: white;
+    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.2);
+
     /* box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3); */
     will-change: transform;
    

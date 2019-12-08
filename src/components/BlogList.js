@@ -40,7 +40,7 @@ const BlogList = ({ blogData }) => {
             )
           })}
       </Root>
-      <Button handleClick={handleClick} />
+      {/* <Button handleClick={handleClick} /> */}
     </>
   )
 }

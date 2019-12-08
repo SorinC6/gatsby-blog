@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby"
 
 function useLogoData() {
   const data = useStaticQuery(
@@ -12,15 +12,24 @@ function useLogoData() {
                   image
                   link
                 }
+                logo {
+                  image {
+                    childImageSharp {
+                      fixed(width: 300, height: 300) {
+                        ...GatsbyImageSharpFixed
+                      }
+                    }
+                  }
+                }
               }
             }
           }
         }
       }
     `
-  );
+  )
   //console.log("QUERY ", data);
-  return data.allMarkdownRemark.edges[0].node.frontmatter.logos;
+  return data.allMarkdownRemark.edges[0].node.frontmatter
 }
 
-export default useLogoData;
+export default useLogoData

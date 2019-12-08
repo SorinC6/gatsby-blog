@@ -8,7 +8,7 @@ import { GlobalStyle } from "./styles/global"
 function Layout({ children }) {
   const data = useSiteMetadata()
   console.log(data)
-
+  
   const { title } = data.siteData
   const { description } = data.siteData
   return (
@@ -27,11 +27,10 @@ function Layout({ children }) {
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
       </Helmet>
-      {/* <GlobalStyle /> */}
       <GlobalStyle />
-      <Header siteTitle={title} />
+      {/* <Header siteTitle={title} /> */}
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

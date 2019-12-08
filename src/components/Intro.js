@@ -2,18 +2,14 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import Image from "gatsby-image"
-import reactSVG from "../assets/react.svg"
+// import Icon from "../assets/react.svg"
+import Icon from "../assets/logos.svg"
 
 const Intro = ({ introData }) => {
   return (
     <Root>
       <Stack>
-        <img src={reactSVG} alt="skiils image" />
-        <img src={reactSVG} alt="skiils image" />
-        <img src={reactSVG} alt="skiils image" />
-        <img src={reactSVG} alt="skiils image" />
-        <img src={reactSVG} alt="skiils image" />
-        <img src={reactSVG} alt="skiils image" />
+        <Icon />
       </Stack>
       <Description>
         Lorem Ipsum is simply dummy text of the printing and typesetting

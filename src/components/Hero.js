@@ -6,8 +6,7 @@ import { useSiteMetadata } from "../lib/hooks"
 
 const Hero = ({ heroData, location }) => {
   const data = useSiteMetadata()
-  const { image } = data.image
-  console.log(data)
+  // const { image } = data.image
 
   return (
     <Root>
@@ -40,5 +39,5 @@ const Root = styled.div`
 const ImageBox = styled(Image)`
   margin-top: -100px;
   padding: 20px 0;
-  z-index: -1;
+  z-index: -20;
 `

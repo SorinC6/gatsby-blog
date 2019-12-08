@@ -1,43 +1,54 @@
-import React from "react";
-import styled from "styled-components";
-import Icon from "../assets/logo.svg";
+import React from "react"
+import styled from "styled-components"
+import Image from "gatsby-image"
 
-const Footer = () => {
+const Footer = ({ logoData }) => {
   return (
     <Root>
-      <SvgWrapper />
+      <ImageWrapper
+        fixed={logoData.logo[0].image.childImageSharp.fixed}
+        alt="logo"
+        style={{
+          height: "100px",
+        }}
+      />
       <div>
-        <p>All rights reserved ©</p>
+        <p>
+          Powerd by{" "}
+          <a href="https://www.woopcode.com/" target="_blank">
+            wwww.woopcode.com
+          </a>
+        </p>
       </div>
     </Root>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
 
 const Root = styled.footer`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 60px;
+  height: 100px;
   background: #4296cb;
-  margin-top: 171px;
   color: white;
+  z-index: 200;
 
   p {
     font-style: bold;
-    font-size: 14px;
-    margin: 0;
-    padding-left: 30px;
+    font-size: 18px;
+    margin-right: 100px;
   }
-`;
+  a {
+    text-decoration: none;
+    color: darkred;
+    font-size: 20px;
+  }
+`
 
-const SvgWrapper = styled(Icon)`
+const ImageWrapper = styled(Image)`
   width: 36px;
   height: 32px;
-  margin-left: 144px;
-
-  @media (max-width: 400px) {
-    margin-left: 36px;
-  }
-`;
+`

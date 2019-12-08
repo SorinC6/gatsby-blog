@@ -1,9 +1,12 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { HamburgerSpin } from "react-animated-burgers"
+// import { HamburgerSpin } from "react-animated-burgers"
 import styled from "styled-components"
-import Icon from "../assets/logo.svg"
+import Image from "gatsby-image"
+
+// import Icon from "../assets/logo.svg"
+// import logo from "../assets/img/homeBg.jpg"
 
 const HeaderContainer = styled.nav`
   display: flex;
@@ -12,7 +15,6 @@ const HeaderContainer = styled.nav`
   max-width: 100%;
   padding: 1rem;
   background: transparent;
-
   h1 {
     font-size: 20px;
   }
@@ -33,12 +35,22 @@ const DesktopNavigation = styled.nav`
 `
 
 const Header = props => {
-  const { siteTitle } = props
+  const { logoData } = props
+  console.log(logoData)
   return (
     <HeaderContainer>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
+      <div>
+        <Image
+          fixed={logoData.logo[0].image.childImageSharp.fixed}
+          alt="logo"
+          style={{
+            height: "100px",
+            background: "black",
+            background: "rgba(0, 0, 0, 0.4)",
+          }}
+        />
+      </div>
+      {/* <img src={logo} alt="bar" /> */}
       <DesktopNavigation>
         <Link to="/">Home</Link>
         <Link to="">Projects</Link>

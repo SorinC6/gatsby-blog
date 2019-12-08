@@ -17,14 +17,15 @@ intro:
   image: /uploads/56217.jpg
 logos:
   - image: /uploads/logo.svg
-    link: 'https://example.com'
+    link: "https://example.com"
   - image: /uploads/logo.svg
     link: /about
   - image: /uploads/logo.svg
-    link: 'https://example.com'
+    link: "https://example.com"
   - image: /uploads/logo.svg
-    link: 'https://example.com'
+    link: "https://example.com"
   - image: /uploads/logo.svg
-    link: 'https://example.com'
+    link: "https://example.com"
+logo:
+  - image: /uploads/wooplogo.png
 ---
-
