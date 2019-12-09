@@ -14,6 +14,6 @@ export {
   useLogoData,
   useBlogData,
   useSlug,
-  useAboutData,
-  useContactData,
+  // useAboutData,
+  // useContactData,
 }
