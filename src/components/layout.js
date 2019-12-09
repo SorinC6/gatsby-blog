@@ -30,9 +30,7 @@ function Layout({ children }) {
         <meta property="og:url" content="/" />
       </Helmet>
       <GlobalStyle />
-      {/* <Header siteTitle={title} /> */}
       <main>{children}</main>
-      {/* <Footer /> */}
     </div>
   )
 }
