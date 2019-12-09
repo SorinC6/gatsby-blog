@@ -1,7 +1,6 @@
 import React from "react"
 import { useContactData } from "../lib/hooks"
 import { Root } from "../components/~common/basicPageStyles"
-import Layout from "../components/Layout"
 import Contact from "../components/Contact"
 
 export function ContactPageTemplate() {
@@ -19,9 +18,9 @@ ContactPageTemplate.propTypes = {}
 
 function ContactPage() {
   return (
-    <Layout>
-      <ContactPageTemplate />
-    </Layout>
+    // <Layout>
+    <ContactPageTemplate />
+    // </Layout>
   )
 }
 
