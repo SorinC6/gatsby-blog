@@ -14,10 +14,10 @@ const ContactPageTemplate = ({ location }) => {
   return (
     <Layout>
       <Header logoData={logoData} contact={true} />
-      <Hero location={location} heroData={heroData} />
       <Root>
         <Contact />
       </Root>
+      <Hero location={location} heroData={heroData} />
       <Footer logoData={logoData} />
     </Layout>
   )
@@ -28,7 +28,7 @@ ContactPageTemplate.propTypes = {}
 export default ContactPageTemplate
 
 const Root = styled.div`
-  height: 62.2vh;
+  height: 62vh;
   min-height: calc(100vh - 290px);
   padding: 0 calc((100vw - 600px) / 2);
 

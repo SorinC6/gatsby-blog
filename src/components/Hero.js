@@ -37,7 +37,7 @@ Hero.propTypes = {
 
 const Root = styled.div`
   max-width: 100%;
-  margin: 1rem auto;
+  margin: 0 auto;
 `
 
 const ImageBox = styled(Image)`
@@ -48,8 +48,9 @@ const ImageBox = styled(Image)`
 `
 
 const CostumImageBox = styled(Image)`
-  margin-top: -155px;
-  padding: 20px 0;
+  padding: 0;
+  margin-top: -900px;
+
   z-index: -20;
-  height: 140px;
+  height: 900px;
 `

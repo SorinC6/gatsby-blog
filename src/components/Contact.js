@@ -112,6 +112,8 @@ export default class Index extends React.Component {
 }
 
 const Root = styled.section`
+  font-family: "Courier";
+
   h1 {
     margin: 0;
     padding: 0 !important;
@@ -123,6 +125,7 @@ const Root = styled.section`
     padding: 10px 20px;
     background: #f4f7f8;
     border-radius: 8px;
+    background: rgba(135, 206, 250, 0.5);
   }
 
   input,
