@@ -50,7 +50,7 @@ const Header = props => {
       {/* <img src={logo} alt="bar" /> */}
       <DesktopNavigation>
         <Link to="/">Home</Link>
-        <Link to="/">Contact</Link>
+        <Link to="/contact">Contact</Link>
         {/* <Link to="">Projects</Link>
         <Link to="/">About</Link> */}
       </DesktopNavigation>

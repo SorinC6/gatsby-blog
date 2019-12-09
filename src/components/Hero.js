@@ -17,6 +17,9 @@ const Hero = ({ heroData, location }) => {
       {location.pathname === "/" && (
         <ImageBox fluid={data.image} alt={heroData.heading} />
       )}
+      {location.pathname === "/contact" && (
+        <CostumImageBox fluid={data.image} alt={heroData.heading} />
+      )}
     </Root>
   )
 }
@@ -41,4 +44,11 @@ const ImageBox = styled(Image)`
   padding: 20px 0;
   z-index: -20;
   height: 1000px;
+`
+
+const CostumImageBox = styled(Image)`
+  margin-top: -155px;
+  padding: 20px 0;
+  z-index: -20;
+  height: 130px;
 `
