@@ -18,7 +18,7 @@ const ContactPageTemplate = ({ location }) => {
         <Contact />
       </Root>
       <Hero location={location} heroData={heroData} />
-      <Footer logoData={logoData} />
+      <Footer logoData={logoData} location={location} />
     </Layout>
   )
 }

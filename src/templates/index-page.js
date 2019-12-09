@@ -39,7 +39,7 @@ export function IndexPageTemplate(props) {
           <MyChoiceComponent />
         </ParallaxLayer>
         <ParallaxLayer offset={3.76} speed={-0.2}>
-          <Footer logoData={logoData} />
+          <Footer logoData={logoData} location={props.location} />
         </ParallaxLayer>
       </Parallax>
     </Root>

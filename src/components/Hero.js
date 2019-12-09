@@ -18,7 +18,7 @@ const Hero = ({ heroData, location }) => {
       {location.pathname === "/" && (
         <ImageBox fluid={data.image} alt={heroData.heading} />
       )}
-      {location.pathname === "/contact" && (
+      {location.pathname === "/contact/" && (
         <CostumImageBox fluid={data.header} alt={heroData.heading} />
       )}
     </Root>

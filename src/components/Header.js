@@ -66,7 +66,7 @@ const Header = props => {
         <Link to="/" activeClassName="active">
           Home
         </Link>
-        <Link to="/contact" activeClassName="active">
+        <Link to="/contact/" activeClassName="active">
           Contact
         </Link>
         {/* <Link to="">Projects</Link>
