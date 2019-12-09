@@ -43,8 +43,9 @@ const Root = styled.footer`
   }
   a {
     text-decoration: none;
-    color: darkred;
     font-size: 20px;
+    color: white;
+    font-family: "Courier";
   }
 `
 

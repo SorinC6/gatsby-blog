@@ -38,7 +38,6 @@ export default class Index extends React.Component {
     return (
       <Layout>
         <Root>
-          <h1>Contact</h1>
           <form
             className="form"
             name="contact"
