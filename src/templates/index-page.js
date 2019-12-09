@@ -14,12 +14,6 @@ import MyChoiceComponent from "../components/MyChoiceComponent"
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
-const url = (name, wrap = false) =>
-  `${
-    wrap ? "url(" : ""
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ")" : ""
-  }`
 
 export function IndexPageTemplate(props) {
   const heroData = useHeroData()
@@ -28,7 +22,7 @@ export function IndexPageTemplate(props) {
   const blogData = useBlogData()
   return (
     <Root>
-      <Parallax scrooling pages={3.69}>
+      <Parallax scrooling pages={3.9}>
         <ParallaxLayer offset={0.02} speed={0.4}>
           <Header logoData={logoData} />
         </ParallaxLayer>
@@ -41,10 +35,10 @@ export function IndexPageTemplate(props) {
         <ParallaxLayer offset={1.2} speed={0.8} style={{ zIndex: 200 }}>
           <BlogList blogData={blogData} />
         </ParallaxLayer>
-        <ParallaxLayer offset={2.8} speed={0.05}>
+        <ParallaxLayer offset={3} speed={-0.05}>
           <MyChoiceComponent />
         </ParallaxLayer>
-        <ParallaxLayer offset={3.53} speed={-0.1}>
+        <ParallaxLayer offset={3.76} speed={-0.2}>
           <Footer logoData={logoData} />
         </ParallaxLayer>
       </Parallax>

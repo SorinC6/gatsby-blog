@@ -25,7 +25,7 @@ const HeaderContainer = styled.nav`
 `
 
 const DesktopNavigation = styled.nav`
-  width: 500px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
 
@@ -53,9 +53,9 @@ const Header = props => {
       {/* <img src={logo} alt="bar" /> */}
       <DesktopNavigation>
         <Link to="/">Home</Link>
-        <Link to="">Projects</Link>
-        <Link to="/">About</Link>
         <Link to="/">Contact</Link>
+        {/* <Link to="">Projects</Link>
+        <Link to="/">About</Link> */}
       </DesktopNavigation>
     </HeaderContainer>
   )

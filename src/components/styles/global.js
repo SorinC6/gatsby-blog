@@ -42,9 +42,9 @@ h6 {
 }
 
 // List
-ul {
+/* ul {
   list-style: none;
-}
+} */
 
 // Form
 button,

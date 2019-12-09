@@ -5,8 +5,8 @@ import styled from "styled-components"
 import ReactIcon from "../assets/logor.svg"
 import GtasbyIcon from "../assets/logo.svg"
 import ReduxIcon from "../assets/redux.svg"
-import NodeIcon from '../assets/node.svg'
-import NextIcon from '../assets/next.svg'
+import NodeIcon from "../assets/node.svg"
+import NextIcon from "../assets/next.svg"
 
 const Intro = () => {
   return (
@@ -56,15 +56,15 @@ const Root = styled.div`
 `
 
 const Stack = styled.div`
-display:flex;
-padding:50px 70px;
+  display: flex;
+  padding: 50px 70px;
 
-justify-content:space-between;
+  justify-content: space-between;
   svg {
     color: blue;
     font-size: 20px;
-    width:50px;
-    height:50px
+    width: 50px;
+    height: 50px;
   }
 `
 const Description = styled.p`
@@ -79,10 +79,4 @@ const Description = styled.p`
     font-weight: 300;
     line-height: 1.5;
   }
-`
-
-const ImageBox = styled.div`
-  width: 60px;
-  height: 60px;
-  color: blue;
 `
