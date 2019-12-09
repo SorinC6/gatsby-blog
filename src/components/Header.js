@@ -12,12 +12,26 @@ const HeaderContainer = styled.nav`
   max-width: 100%;
   padding: 1rem;
   background: transparent;
+
+  .active {
+    color: darkslateblue;
+    font-size: 21px;
+  }
+
   h1 {
     font-size: 20px;
   }
 
   a {
     text-decoration: none;
+    font-weight: 600;
+    color: white;
+    font-family: "Courier";
+    transition: 500ms all;
+
+    &:hover {
+      font-size: 21px;
+    }
   }
 `
 
@@ -49,8 +63,12 @@ const Header = props => {
       </div>
       {/* <img src={logo} alt="bar" /> */}
       <DesktopNavigation>
-        <Link to="/">Home</Link>
-        <Link to="/contact">Contact</Link>
+        <Link to="/" activeClassName="active">
+          Home
+        </Link>
+        <Link to="/contact" activeClassName="active">
+          Contact
+        </Link>
         {/* <Link to="">Projects</Link>
         <Link to="/">About</Link> */}
       </DesktopNavigation>

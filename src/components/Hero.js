@@ -6,6 +6,7 @@ import { useSiteMetadata } from "../lib/hooks"
 
 const Hero = ({ heroData, location }) => {
   const data = useSiteMetadata()
+  console.log(data)
   // const { image } = data.image
 
   return (
@@ -18,7 +19,7 @@ const Hero = ({ heroData, location }) => {
         <ImageBox fluid={data.image} alt={heroData.heading} />
       )}
       {location.pathname === "/contact" && (
-        <CostumImageBox fluid={data.image} alt={heroData.heading} />
+        <CostumImageBox fluid={data.header} alt={heroData.heading} />
       )}
     </Root>
   )
@@ -50,5 +51,5 @@ const CostumImageBox = styled(Image)`
   margin-top: -155px;
   padding: 20px 0;
   z-index: -20;
-  height: 130px;
+  height: 140px;
 `

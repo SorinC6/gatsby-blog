@@ -5,7 +5,6 @@ import { GlobalStyle } from "./styles/global"
 
 function Layout({ children }) {
   const data = useSiteMetadata()
-  console.log(data)
 
   const { title } = data.siteData
   const { description } = data.siteData
