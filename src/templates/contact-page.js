@@ -28,7 +28,7 @@ ContactPageTemplate.propTypes = {}
 export default ContactPageTemplate
 
 const Root = styled.div`
-  height: 62vh;
+  height: 62.3vh;
   min-height: calc(100vh - 290px);
   padding: 0 calc((100vw - 600px) / 2);
 
