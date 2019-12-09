@@ -8,7 +8,7 @@ import { GlobalStyle } from "./styles/global"
 function Layout({ children }) {
   const data = useSiteMetadata()
   console.log(data)
-  
+
   const { title } = data.siteData
   const { description } = data.siteData
   return (
@@ -21,6 +21,10 @@ function Layout({ children }) {
           href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,600,700&display=swap"
+          rel="stylesheet"
+        ></link>
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />

@@ -31,7 +31,7 @@ const Root = styled.footer`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 100px;
+  height: 110px;
   background: #4296cb;
   color: white;
   z-index: 200;

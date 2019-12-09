@@ -1,27 +1,35 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import Image from "gatsby-image"
-// import Icon from "../assets/react.svg"
-import Icon from "../assets/logos.svg"
+// import Image from "gatsby-image"
+import ReactIcon from "../assets/logor.svg"
+import GtasbyIcon from "../assets/logo.svg"
+import ReduxIcon from "../assets/redux.svg"
+import NodeIcon from '../assets/node.svg'
+import NextIcon from '../assets/next.svg'
 
-const Intro = ({ introData }) => {
+const Intro = () => {
   return (
     <Root>
-      <Stack>
-        <Icon />
-      </Stack>
       <Description>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum
+        <p>
+          💻 🇷🇴 Interested in all things related to web technologies 🗯 espacial
+          in the React world 🌎🌎 Pasionate about building reusable components
+          and all kind of weird animation 🌓 🇷🇴 . Curios, onest and really
+          focused are just a few words in witch I can describe myself ,
+          somethims spending to much time trying to make stuff look good in the
+          browser 🐲 💪. Love to experiment with all things that React world can
+          offered, staying in touch with the current changes in react, keep
+          building and learning 🏋️‍♂️ 🏋️‍♂️
+        </p>
       </Description>
+      <Stack>
+        <ReactIcon />
+        <GtasbyIcon />
+        <ReduxIcon />
+        <NodeIcon />
+        <NextIcon />
+      </Stack>
     </Root>
   )
 }
@@ -42,18 +50,39 @@ const Root = styled.div`
   margin-top: -200px;
   width: 1000px;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 400px;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
 `
 
-const Stack = styled.div``
-const Description = styled.div``
+const Stack = styled.div`
+display:flex;
+padding:50px 70px;
 
-const ImageBox = styled(Image)`
-  width: 236px;
-  height: 370px;
-
-  @media (max-width: 400px) {
-    display: none;
+justify-content:space-between;
+  svg {
+    color: blue;
+    font-size: 20px;
+    width:50px;
+    height:50px
   }
+`
+const Description = styled.p`
+  p {
+    color: white;
+    padding: 0 40px;
+    padding-top: 50px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+`
+
+const ImageBox = styled.div`
+  width: 60px;
+  height: 60px;
+  color: blue;
 `

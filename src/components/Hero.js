@@ -40,4 +40,5 @@ const ImageBox = styled(Image)`
   margin-top: -100px;
   padding: 20px 0;
   z-index: -20;
+  height: 1000px;
 `
