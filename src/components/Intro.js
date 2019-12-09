@@ -13,14 +13,14 @@ const Intro = () => {
     <Root>
       <Description>
         <p>
-          💻 🇷🇴 Interested in all things related to web technologies 🗯 espacial
-          in the React world 🌎🌎 Pasionate about building reusable components
-          and all kind of weird animation 🌓 🇷🇴 . Curios, onest and really
-          focused are just a few words in witch I can describe myself ,
-          somethims spending to much time trying to make stuff look good in the
-          browser 🐲 💪. Love to experiment with all things that React world can
-          offered, staying in touch with the current changes in react, keep
-          building and learning 🏋️‍♂️ 🏋️‍♂️
+          💻 🇷🇴 Interested in all things related to web technologies 🗯
+          especially in the React world 🌎🌎 Pasionate about building reusable
+          components and all kind of weird animation 🔆 🌓 🇷🇴. Curious, onest
+          and focused are just a few words that describe me , somethims spending
+          to much time trying to make stuff look good in the browser 🐲 💪. Love
+          to experiment with all things that React world can offered, staying in
+          touch with the current changes in react, keep building and
+          learning...🏋️‍♂️ 🏋️‍♂️
         </p>
       </Description>
       <Stack>
