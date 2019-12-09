@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import Layout from "../components/Layout";
-import moment from "moment";
+import React from "react"
+import styled from "styled-components"
+import PropTypes from "prop-types"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+import moment from "moment"
 
 export const query = graphql`
   query($slug: String!) {
@@ -15,7 +15,7 @@ export const query = graphql`
       html
     }
   }
-`;
+`
 
 export function BlogPostTemplate({ title, date, body }) {
   // not sure why post data its comming only in BlogPost component
@@ -25,24 +25,24 @@ export function BlogPostTemplate({ title, date, body }) {
       <h6>Posted on: {moment(date).format("MMMM Do YYYY, h:mm a")}</h6>
       <div dangerouslySetInnerHTML={{ __html: body }}></div>
     </Root>
-  );
+  )
 }
 
 BlogPostTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  body: PropTypes.string
-};
+  body: PropTypes.string,
+}
 
 function BlogPost({ data }) {
   //console.log(JSON.stringify(data, undefined, 4));
-  const { title, date } = data.markdownRemark.frontmatter;
-  const { html } = data.markdownRemark;
+  const { title, date } = data.markdownRemark.frontmatter
+  const { html } = data.markdownRemark
   return (
-    <Layout>
-      <BlogPostTemplate title={title} date={date} body={html} />
-    </Layout>
-  );
+    // <Layout>
+    <BlogPostTemplate title={title} date={date} body={html} />
+    //</Layout>
+  )
 }
 
 BlogPost.propTypes = {
@@ -50,14 +50,14 @@ BlogPost.propTypes = {
     markdownRemark: PropTypes.objectOf({
       frontmatter: PropTypes.objectOf({
         title: PropTypes.string.isRequired,
-        date: PropTypes.string
+        date: PropTypes.string,
       }),
-      html: PropTypes.string
-    })
-  })
-};
+      html: PropTypes.string,
+    }),
+  }),
+}
 
-export default BlogPost;
+export default BlogPost
 
 const Root = styled.div`
   padding: 0 calc((100vw - 600px) / 2);
@@ -90,4 +90,4 @@ const Root = styled.div`
   img {
     border-radius: 5px;
   }
-`;
+`

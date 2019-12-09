@@ -10,8 +10,7 @@ exports.components = {
   "component---src-pages-404-js": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/404.js"))),
   "component---src-pages-blog-js": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/blog.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/index.js"))),
-  "component---src-pages-product-js": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/product.js"))),
-  "component---src-pages-blog-2019-11-25-test-1-md": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/blog/2019-11-25-test-1.md"))),
-  "component---src-pages-blog-2019-11-25-test-md": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/blog/2019-11-25-test.md")))
+  "component---src-pages-blog-2019-11-25-test-md": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/blog/2019-11-25-test.md"))),
+  "component---src-pages-blog-2019-11-25-test-1-md": hot(preferDefault(require("/Users/user/Documents/gatsby/gatsby-blog/src/pages/blog/2019-11-25-test-1.md")))
 }
 
