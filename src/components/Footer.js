@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Image from "gatsby-image"
 
 const Footer = ({ logoData, location }) => {
-  console.log(location)
   const isContactPage = location.pathname === "/contact/"
   return (
     <Root isContactPage={isContactPage}>
@@ -56,4 +55,8 @@ const ImageWrapper = styled(Image)`
   visibility: ${props => (props.isContactPage ? "hidden" : "visible")};
   width: 36px;
   height: 32px;
+
+  @media (max-width: 400px) {
+    display: none;
+  }
 `

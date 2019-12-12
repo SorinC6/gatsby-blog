@@ -48,18 +48,24 @@ Intro.propTypes = {
 const Root = styled.div`
   margin: 0 auto;
   margin-top: -200px;
-  width: 1000px;
+  max-width: 1000px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.4);
-  height: 400px;
+  max-height: 400px;
   box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 400px) {
+    max-height: 600px;
+  }
 `
 
 const Stack = styled.div`
   display: flex;
   padding: 50px 70px;
-
   justify-content: space-between;
+  @media (max-width: 500px) {
+    display: none;
+  }
   svg {
     color: blue;
     font-size: 20px;
@@ -67,6 +73,7 @@ const Stack = styled.div`
     height: 50px;
   }
 `
+
 const Description = styled.p`
   p {
     color: white;
@@ -78,5 +85,11 @@ const Description = styled.p`
     font-family: "Josefin Sans", sans-serif;
     font-weight: 300;
     line-height: 1.5;
+  }
+
+  @media (max-width: 700px) {
+    p {
+      font-size: 16px;
+    }
   }
 `

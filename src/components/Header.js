@@ -13,6 +13,11 @@ const HeaderContainer = styled.nav`
   padding: 1rem;
   background: transparent;
 
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .active {
     color: darkslateblue;
     font-size: 21px;
@@ -47,7 +52,6 @@ const DesktopNavigation = styled.nav`
 
 const Header = props => {
   const { logoData } = props
-  console.log(logoData)
   return (
     <HeaderContainer>
       <div>

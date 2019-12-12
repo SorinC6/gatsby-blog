@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import PreviewCompatibleImage from "../lib/PreviewCompatibleImage"
 import BlogCard from "./~common/BlogCard"
+import Img from "gatsby-image"
 
 const BlogPreview = ({ title, excerpt, image, date, index }) => {
   const imageObject = {
@@ -13,7 +14,7 @@ const BlogPreview = ({ title, excerpt, image, date, index }) => {
   return (
     <BlogCard>
       <Root index={index}>
-        <PreviewCompatibleImage imageInfo={imageObject} />
+        <ImgeWrapper fluid={image.childImageSharp.fluid} />
         <CardInfo>
           <h6>{title} </h6>
           <p>{excerpt}</p>
@@ -38,10 +39,34 @@ const Root = styled.div`
   width: 800px;
   margin-bottom: 50px;
   transition: 1s all;
+
+  @media (max-width: 800px) {
+    width: 400px;
+    flex-direction: column;
+  }
+  @media (max-width: 400px) {
+    width: 300px;
+    flex-direction: column;
+    height: 285px;
+  }
+
   &:hover {
     h6 {
       transform: translateY(-3px);
     }
+  }
+`
+
+const ImgeWrapper = styled(Img)`
+  border-radius: 2px;
+  min-width: 350px;
+  height: 240px;
+
+  @media (max-width: 800px) {
+    height: 100px;
+  }
+  @media (max-width: 400px) {
+    min-width: 200px; 
   }
 `
 

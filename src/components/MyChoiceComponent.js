@@ -49,6 +49,9 @@ const Root = styled.div`
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
   line-height: 1.5;
+  @media (max-width: 400px) {
+    display: none;
+  }
 
   h2 {
     position: absolute;

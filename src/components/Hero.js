@@ -6,7 +6,6 @@ import { useSiteMetadata } from "../lib/hooks"
 
 const Hero = ({ heroData, location }) => {
   const data = useSiteMetadata()
-  console.log(data)
   // const { image } = data.image
 
   return (
