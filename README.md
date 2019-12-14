@@ -1,13 +1,5 @@
-### Access Locally
+### Deployed with Netlify [View Project](https://woopblog.netlify.com/)
 
-This uses the new [Netlify Dev](https://www.netlify.com/products/dev/?utm_source=blog&utm_medium=netlifycms&utm_campaign=devex) CLI feature to serve any functions you have in the `lambda` folder.
-
-To test the CMS locally, you'll need run a production build of the site:
-
-```
-$ npm run build
-$ netlify dev # or ntl dev
-```
 
 ## Getting Started (Without Netlify)
 
